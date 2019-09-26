@@ -10,13 +10,14 @@ Imports System.Xml.Schema
 Imports DuoVOvb.eMedNySOAPClient
 
 Public Class Form1
+
     Private Function setBinding() As CustomBinding
         Dim binding As CustomBinding = New CustomBinding()
 
         Dim security As AsymmetricSecurityBindingElement = AsymmetricSecurityBindingElement.CreateMutualCertificateDuplexBindingElement()
         security.DefaultAlgorithmSuite = SecurityAlgorithmSuite.Basic256Sha256
         security.IncludeTimestamp = True
-        security.AllowSerializedSigningTokenOnReply  = true
+        security.AllowSerializedSigningTokenOnReply = True
         binding.Elements.Add(security)
         binding.Elements.Add(New TextMessageEncodingBindingElement(MessageVersion.Soap11WSAddressing10, Encoding.UTF8))
         binding.Elements.Add(New HttpsTransportBindingElement With {
@@ -53,7 +54,6 @@ Public Class Form1
         Return endPoint
     End Function
 
-
     Private Function setServiceCertificate() As X509Certificate2
         Dim x509Service As New X509Certificate2("xml-test.duo.nl.cer")
         Return x509Service
@@ -70,7 +70,7 @@ Public Class Form1
 
             Dim req As New MHSClient.aanleverenIdentificerenPersoonVO_Request
             req.identificatiecodeBedrijfsdocument = Guid.NewGuid().ToString()
-            req.verzendendeInstantie = "00DI"
+            req.verzendendeInstantie = "00AB"
             req.ontvangendeInstantie = "DUO"
             req.datumTijdBedrijfsdocument = DateTime.Now
             req.geboorteDatum = "2000-09-18"
@@ -106,7 +106,7 @@ Public Class Form1
 
             Dim req As New MHSClient.aanleverenIdentificerenPersoonVO_Request
             req.identificatiecodeBedrijfsdocument = Guid.NewGuid().ToString()
-            req.verzendendeInstantie = "00DI"
+            req.verzendendeInstantie = "00AB"
             req.ontvangendeInstantie = "DUO"
             req.datumTijdBedrijfsdocument = DateTime.Now
             req.geboorteDatum = "2000-09-18"

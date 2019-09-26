@@ -34,48 +34,48 @@ Partial Class Form1
         '
         Me.Button1.Location = New System.Drawing.Point(12, 27)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(148, 23)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "code"
+        Me.Button1.Text = "stuur bericht (vanuit code)"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(93, 27)
+        Me.RichTextBox1.Location = New System.Drawing.Point(12, 56)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(564, 289)
+        Me.RichTextBox1.Size = New System.Drawing.Size(863, 155)
         Me.RichTextBox1.TabIndex = 1
         Me.RichTextBox1.Text = ""
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(12, 76)
+        Me.Button2.Location = New System.Drawing.Point(166, 27)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.Size = New System.Drawing.Size(152, 23)
         Me.Button2.TabIndex = 2
-        Me.Button2.Text = "config"
+        Me.Button2.Text = "stuur bericht (vanuit config)"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(12, 122)
+        Me.Button3.Location = New System.Drawing.Point(324, 27)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.Size = New System.Drawing.Size(116, 23)
         Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Inschrijving"
+        Me.Button3.Text = "stuur Inschrijving"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'RichTextBox2
         '
-        Me.RichTextBox2.Location = New System.Drawing.Point(93, 334)
+        Me.RichTextBox2.Location = New System.Drawing.Point(12, 217)
         Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.Size = New System.Drawing.Size(898, 225)
+        Me.RichTextBox2.Size = New System.Drawing.Size(863, 155)
         Me.RichTextBox2.TabIndex = 4
         Me.RichTextBox2.Text = ""
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(846, 305)
+        Me.Button4.Location = New System.Drawing.Point(446, 27)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(145, 23)
         Me.Button4.TabIndex = 5
@@ -86,7 +86,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1003, 571)
+        Me.ClientSize = New System.Drawing.Size(883, 388)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.RichTextBox2)
         Me.Controls.Add(Me.Button3)
