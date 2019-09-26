@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DuoVOvb", "DuoVOvb\DuoVOvb.vbproj", "{2751B203-6358-4DCF-99A5-F9193755F2F5}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DuoVOvb", "DuoVOvb.vbproj", "{2751B203-6358-4DCF-99A5-F9193755F2F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
