@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://duo.nl/schema/DUO_VOInformatiediensten_IdentificerenPersoonVO_V1" xmlns:qf4="http://duo.nl/schema/NL:OCW:GWB:BASIS" xmlns:qf2="http://duo.nl/schema/DUO_VOBasisschema_Informatiediensten_V1" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://duo.nl/schema/DUO_VOInformatiediensten_IdentificerenPersoonVO_V1" version="18565" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="DUO_VOBasisschema_Informatiediensten_V1.xsd" namespace="http://duo.nl/schema/DUO_VOBasisschema_Informatiediensten_V1" />
+  <xsd:import schemaLocation="BasisSchema.xsd" namespace="http://duo.nl/schema/NL:OCW:GWB:BASIS" />
+  <xsd:annotation>
+    <xsd:documentation>XSD gegenereerd op 31-01-2018 16:16:36.218 op basis van commit-versie 18565 van het DUO_Service- en Berichtenboek ten behoeve van het servicecontract DUO_VOInformatiediensten_IdentificerenPersoonVAVO_V1. Gemaakt met H:\.magicdraw185\stateful16\data\reports\WSDL-XSD-script\XSD-WSDL-script_V0039.docx en XSD-script_V0039.xml</xsd:documentation>
+  </xsd:annotation>
+  <xsd:element name="aanleverenIdentificerenPersoonVO_Request" type="aanleverenIdentificerenPersoonVO_Request" />
+  <xsd:element name="aanleverenIdentificerenPersoonVO_Response" type="aanleverenIdentificerenPersoonVO_Response" />
+  <xsd:complexType name="aanleverenIdentificerenPersoonVO_Request">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="qf2:Bedrijfsdocument">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="huidigOnderwijsnummer" type="qf4:Onderwijsnummer" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="geboorteDatum" type="qf4:Geboortedatum" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="geslacht" type="qf4:Geslacht-v02" />
+          <xsd:choice minOccurs="1" maxOccurs="1">
+            <xsd:element name="metPGN" type="qf2:MetPGN" />
+            <xsd:element name="zonderPGN" type="qf2:ZonderPGN" />
+          </xsd:choice>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="aanleverenIdentificerenPersoonVO_Response">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="qf2:OntvangstBevestiging" />
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

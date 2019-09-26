@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:qf1="http://duo.nl/schema/DUO_VOAanlevering_InschrijvingVO_V1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://duo.nl/contract/DUO_VOAanlevering_InschrijvingVO_V1" name="DUO_VOAanlevering_InschrijvingVO_V1" targetNamespace="http://duo.nl/contract/DUO_VOAanlevering_InschrijvingVO_V1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>Versie 1.0</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import schemaLocation="DUO_VOAanlevering_InschrijvingVO_V1.xsd" namespace="http://duo.nl/schema/DUO_VOAanlevering_InschrijvingVO_V1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="aanleverenInschrijvingVO_Request">
+    <wsdl:part name="body" element="qf1:aanleverenInschrijvingVO_Request" />
+  </wsdl:message>
+  <wsdl:message name="aanleverenInschrijvingVO_Response">
+    <wsdl:part name="body" element="qf1:aanleverenInschrijvingVO_Response" />
+  </wsdl:message>
+  <wsdl:message name="aanleverenVerwijderingInschrijvingVO_Request">
+    <wsdl:part name="body" element="qf1:aanleverenVerwijderingInschrijvingVO_Request" />
+  </wsdl:message>
+  <wsdl:message name="aanleverenVerwijderingInschrijvingVO_Response">
+    <wsdl:part name="body" element="qf1:aanleverenVerwijderingInschrijvingVO_Response" />
+  </wsdl:message>
+  <wsdl:portType name="DUO_VOAanlevering_InschrijvingVO_V1.0_PortType">
+    <wsdl:operation name="aanleverenInschrijvingVO">
+      <wsdl:input message="tns:aanleverenInschrijvingVO_Request" />
+      <wsdl:output message="tns:aanleverenInschrijvingVO_Response" />
+    </wsdl:operation>
+    <wsdl:operation name="aanleverenVerwijderingInschrijvingVO">
+      <wsdl:input message="tns:aanleverenVerwijderingInschrijvingVO_Request" />
+      <wsdl:output message="tns:aanleverenVerwijderingInschrijvingVO_Response" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DUO_VOAanlevering_InschrijvingVO_V1.0_Binding" type="tns:DUO_VOAanlevering_InschrijvingVO_V1.0_PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="aanleverenInschrijvingVO">
+      <soap:operation soapAction="http://duo.nl/contract/DUO_VOAanlevering_InschrijvingVO_V1/aanleverenInschrijvingVO" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="aanleverenVerwijderingInschrijvingVO">
+      <soap:operation soapAction="http://duo.nl/contract/DUO_VOAanlevering_InschrijvingVO_V1/aanleverenVerwijderingInschrijvingVO" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DUO_VOAanlevering_InschrijvingVO_V1.0">
+    <wsdl:port name="DUO_VOAanlevering_InschrijvingVO_V1.0Port" binding="tns:DUO_VOAanlevering_InschrijvingVO_V1.0_Binding">
+      <soap:address location="localhost" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

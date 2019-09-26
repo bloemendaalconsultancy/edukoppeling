@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://duo.nl/schema/DUO_VOAanlevering_InschrijvingVO_V1" xmlns:qf4="http://duo.nl/schema/NL:OCW:GWB:BASIS" xmlns:qf2="http://duo.nl/schema/DUO_VOBasisschema_Inschrijving_V1" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://duo.nl/schema/DUO_VOAanlevering_InschrijvingVO_V1" version="18565" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="DUO_VOBasisschema_Inschrijving_V1.xsd" namespace="http://duo.nl/schema/DUO_VOBasisschema_Inschrijving_V1" />
+  <xsd:import schemaLocation="BasisSchema.xsd" namespace="http://duo.nl/schema/NL:OCW:GWB:BASIS" />
+  <xsd:annotation>
+    <xsd:documentation>XSD gegenereerd op 31-01-2018 15:58:51.806 op basis van commit-versie 18565 van het DUO_Service- en Berichtenboek ten behoeve van het servicecontract DUO_VOAanlevering_InschrijvingVAVO_V1. Gemaakt met H:\.magicdraw185\stateful16\data\reports\WSDL-XSD-script\XSD-WSDL-script_V0039.docx en XSD-script_V0039.xml</xsd:documentation>
+  </xsd:annotation>
+  <xsd:element name="aanleverenInschrijvingVO_Request" type="AanleverenInschrijvingVO_Request" />
+  <xsd:element name="aanleverenInschrijvingVO_Response" type="AanleverenInschrijvingVO_Response" />
+  <xsd:element name="aanleverenVerwijderingInschrijvingVO_Request" type="AanleverenVerwijderingInschrijvingVO_Request" />
+  <xsd:element name="aanleverenVerwijderingInschrijvingVO_Response" type="AanleverenVerwijderingInschrijvingVO_Response" />
+  <xsd:complexType name="AanleverenInschrijvingVO_Request">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="InschrijvingVO" />
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AanleverenInschrijvingVO_Response">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="qf2:OntvangstBevestiging" />
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AanleverenVerwijderingInschrijvingVO_Request">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="qf2:VerwijderingInschrijving" />
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AanleverenVerwijderingInschrijvingVO_Response">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="qf2:OntvangstBevestiging" />
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Experiment">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="naam" type="qf4:Experimentnaam-v01" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InschrijvingPeriodeVO">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="qf2:InschrijvingPeriode">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="vestiging" type="qf4:BRINNummerVestiging" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="leerjaar" type="qf4:Leerjaar-v02" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="indicatieBekostigbaar" type="qf4:BekostigingsIndicatie" />
+          <xsd:element minOccurs="0" maxOccurs="100" name="experiment" type="Experiment" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InschrijvingVO">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="qf2:Inschrijving">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="100" name="inschrijvingPeriodeVO" type="InschrijvingPeriodeVO" />
+          <xsd:element minOccurs="0" maxOccurs="100" name="ontwikkelingsperspectief" type="Ontwikkelingsperspectief" />
+          <xsd:element minOccurs="0" maxOccurs="100" name="verblijfAndereInstelling" type="VerblijfAndereInstelling" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Ontwikkelingsperspectief">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="datumBegin" type="qf4:PeriodeBegindatum-v01" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="datumEind" type="qf4:PeriodeTotEnMetDatum-v01" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="VerblijfAndereInstelling">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="datumBegin" type="qf4:PeriodeBegindatum-v01" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="datumEind" type="qf4:PeriodeTotEnMetDatum-v01" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="brin" type="qf4:BRIN" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="vestiging" type="qf4:BRINNummerVestiging" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="verblijfsoort" type="qf4:VerblijfsoortAndereInstelling-v01" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2f4bec6e-5c54-49a9-902b-2f0dafe3fa29" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\Administrator\Documents\Visual Studio 2017\Projects\AGH\WS VO\VOInformatiediensten Identificeren\DUO_VOInformatiediensten_IdentificerenPersoonVO_V1.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="KerntypenSchema.xsd" MetadataType="Schema" ID="7646b2b1-bd43-403e-a181-3a27a1c2f850" SourceId="1" SourceUrl="file:///C:/Users/Administrator/Documents/Visual Studio 2017/Projects/AGH/WS VO/VOInformatiediensten Identificeren/KerntypenSchema.xsd" />
+    <MetadataFile FileName="BasisSchema.xsd" MetadataType="Schema" ID="33e487bb-53f9-4dfc-bfd0-21a589d2df23" SourceId="1" SourceUrl="file:///C:/Users/Administrator/Documents/Visual Studio 2017/Projects/AGH/WS VO/VOInformatiediensten Identificeren/BasisSchema.xsd" />
+    <MetadataFile FileName="DUO_VOInformatiediensten_IdentificerenPersoonVO_V1.wsdl" MetadataType="Wsdl" ID="cc024993-8eb4-43f0-9978-8d6f03fe9015" SourceId="1" SourceUrl="file:///C:/Users/Administrator/Documents/Visual Studio 2017/Projects/AGH/WS VO/VOInformatiediensten Identificeren/DUO_VOInformatiediensten_IdentificerenPersoonVO_V1.wsdl" />
+    <MetadataFile FileName="DUO_VOBasisschema_Informatiediensten_V1.xsd" MetadataType="Schema" ID="5d517e45-2996-4500-8f95-3b427d6169cf" SourceId="1" SourceUrl="file:///C:/Users/Administrator/Documents/Visual Studio 2017/Projects/AGH/WS VO/VOInformatiediensten Identificeren/DUO_VOBasisschema_Informatiediensten_V1.xsd" />
+    <MetadataFile FileName="DUO_VOInformatiediensten_IdentificerenPersoonVO_V1.xsd" MetadataType="Schema" ID="5858f389-13ac-45ab-9383-068dac7beae8" SourceId="1" SourceUrl="file:///C:/Users/Administrator/Documents/Visual Studio 2017/Projects/AGH/WS VO/VOInformatiediensten Identificeren/DUO_VOInformatiediensten_IdentificerenPersoonVO_V1.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

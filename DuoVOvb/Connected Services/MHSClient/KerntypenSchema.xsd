@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://duo.nl/schema/NL:OCW:GWB:CORE" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://duo.nl/schema/NL:OCW:GWB:CORE" version="18565" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:annotation>
+    <xsd:documentation>XSD gegenereerd op 31-01-2018 16:16:35.968 op basis van commit-versie 18565 van het DUO_Service- en Berichtenboek ten behoeve van het servicecontract DUO_VOInformatiediensten_IdentificerenPersoonVAVO_V1. Gemaakt met H:\.magicdraw185\stateful16\data\reports\WSDL-XSD-script\XSD-WSDL-script_V0039.docx en XSD-script_V0039.xml</xsd:documentation>
+  </xsd:annotation>
+  <xsd:simpleType name="CodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+Definitie: Gelimiteerde set van vaste combinaties van letters en cijfers. Maakt gebruik van enumeraties.
+DefinitieHerkomst: DUO
+FormaatKarakterset: AN
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:normalizedString" />
+  </xsd:simpleType>
+  <xsd:simpleType name="DatumOnvolledigType">
+    <xsd:annotation>
+      <xsd:documentation>
+Definitie: Datum waarvan de dag, de dag en maand of de dag, maand en het jaar niet bekend hoeft te zijn. Deze bevat dan 00 (dag, maand) of 0000 (jaar).
+DefinitieHerkomst: GBA
+FormaatKarakterset: AN
+BeschrijvingControles: Het datumOnvolledigType bestaat uit 4 cijfers voor het jaar, een streepje, 2 cijfers voor de maand, een streepje, en 2 cijfers voor de dag. De dag mag 00 zijn, de maand en de dag mogen 00-00 zijn, of jaar, maand en dag mogen 0000-00-00 zijn
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:minLength value="10" />
+      <xsd:maxLength value="10" />
+      <xsd:pattern value="\d\d\d\d-(00|01|02|03|04|05|06|07|08|09|10|11|12)-(0[0-9]|[1-2][0-9]|3[01])" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="DatumTijdLangType">
+    <xsd:annotation>
+      <xsd:documentation>
+Definitie: Tijdbepaling met datum en tijd in jaar, maand, dag, uur, minuten, seconden en milliseconden
+DefinitieHerkomst: DUO
+FormaatKarakterset: AN
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:dateTime" />
+  </xsd:simpleType>
+  <xsd:simpleType name="IdentificatiecodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+Definitie: Identificerende combinatie van letters en cijfers zonder betekenis
+DefinitieHerkomst: DUO
+FormaatKarakterset: AN
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:normalizedString">
+      <xsd:minLength value="1" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Naam0Type">
+    <xsd:annotation>
+      <xsd:documentation>
+Definitie: Kerntype voor een naam die leeg mag zijn
+DefinitieHerkomst: DUO
+FormaatKarakterset: AN
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token" />
+  </xsd:simpleType>
+  <xsd:simpleType name="NaamType">
+    <xsd:annotation>
+      <xsd:documentation>
+Definitie: Kerntype voor een naam die niet leeg mag zijn
+DefinitieHerkomst: DUO
+FormaatKarakterset: AN
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:minLength value="1" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="TekstType">
+    <xsd:annotation>
+      <xsd:documentation>
+Definitie: Kerntype voor willekeurige tekst
+DefinitieHerkomst: DUO
+FormaatKarakterset: AN
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="3000" />
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

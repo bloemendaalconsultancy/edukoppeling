@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://duo.nl/schema/NL:OCW:GWB:BASIS" xmlns:qf3="http://duo.nl/schema/NL:OCW:GWB:CORE" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://duo.nl/schema/NL:OCW:GWB:BASIS" version="18565" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="KerntypenSchema.xsd" namespace="http://duo.nl/schema/NL:OCW:GWB:CORE" />
+  <xsd:annotation>
+    <xsd:documentation>XSD gegenereerd op 31-01-2018 15:58:51.963 op basis van commit-versie 18565 van het DUO_Service- en Berichtenboek ten behoeve van het servicecontract DUO_VOAanlevering_InschrijvingVAVO_V1. Gemaakt met H:\.magicdraw185\stateful16\data\reports\WSDL-XSD-script\XSD-WSDL-script_V0039.docx en XSD-script_V0039.xml</xsd:documentation>
+  </xsd:annotation>
+  <xsd:simpleType name="BekostigingsIndicatie">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Onderwijsdeelname
+Definitie: De bekostigingsindicatie geeft aan of een inschrijving, graad, licentie of instelling in aanmerking komt voor bekostiging in de vorm van een rijksbijdrage.
+DefinitieHerkomst: DUO
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:IndicatorType" />
+  </xsd:simpleType>
+  <xsd:simpleType name="BetalendePartij-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Onderwijsdeelname
+Definitie: De aanduiding die aangeeft wie het lesgeld betaald
+DefinitieHerkomst: DUO
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:WaardenlijstType-v01" />
+  </xsd:simpleType>
+  <xsd:simpleType name="BRIN">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Identificatie
+Definitie: Een unieke code voor een onderwijsinstelling in de Basis Registratie Instellingen of een instellingserkenning in de Registratie Instellingen en Opleidingen in het Onderwijs.
+DefinitieHerkomst: OCW
+FormaatKarakterset: AN
+BeschrijvingControles: Het BRIN bestaat uit 2 cijfers en 2 hoofdletters
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:TekstType">
+      <xsd:minLength value="4" />
+      <xsd:maxLength value="4" />
+      <xsd:pattern value="([0-9]{2}[A-Z]{2})" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="BRINNummerVestiging">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Identificatie
+Definitie: Een unieke code voor een erkende vestiging van een erkende onderwijsinstelling of een vestigingserkenning van een instellingserkenning.
+DefinitieHerkomst: OCW
+Toelichting: Het is de combinatie van BRIN met BRINvolgnummer.
+FormaatKarakterset: AN
+BeschrijvingControles: Het BRIN nummer vestiging bestaat uit 2 cijfers, 2 hoofdletters en 2 cijfers
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:TekstType">
+      <xsd:minLength value="6" />
+      <xsd:maxLength value="6" />
+      <xsd:pattern value="([0-9]{2}[A-Z]{2}[0-9]{2})?" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Burgerservicenummer-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Mens
+Definitie: Het burgerservicenummer (BSN) is het nummer dat de natuurlijke persoon uniek identificeert in overheidsadministraties.
+DefinitieHerkomst: LO3.7:01.01.20 LO4: 01.02.01
+Toelichting: MOD ((9*p1 + 8*p2 + 7*p3 + 6*p4 + 5*p5 + 4*p6 + 3*p7 + 2*p8 - p9) : 11) = 0
+BeschrijvingControles: Het burgerservicenummer moet 9 cijfers bevatten en voldoen aan de 11 proef uit de toelichting.
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:TekstType">
+      <xsd:minLength value="9" />
+      <xsd:maxLength value="9" />
+      <xsd:pattern value="\d{9}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="DatumInschrijving">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Onderwijsdeelname
+Definitie: De datum vanaf wanneer de betrokkene is ingeschreven bij een onderwijsinstelling
+DefinitieHerkomst: OCW
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:DatumType" />
+  </xsd:simpleType>
+  <xsd:simpleType name="DatumTijdBedrijfsdocument">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Meta
+Definitie: Datum en  tijdstip waarop een bedrijfsdocument is aangemaakt, weergegeven in UTC (is een standaardtijd, gebaseerd op een atoomklok en gecoördineerd met de rotatie van de aarde)
+DefinitieHerkomst: DUO
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:DatumTijdLangType" />
+  </xsd:simpleType>
+  <xsd:simpleType name="DatumUitschrijving">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Onderwijsdeelname
+Definitie: De laatste dag waarop de inschrijving van de onderwijsontvangende aan de onderwijsinstelling nog geldig is
+DefinitieHerkomst: OCW
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:DatumType" />
+  </xsd:simpleType>
+  <xsd:simpleType name="Experimentnaam-v01">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Onderwijsaanbod
+Definitie: Indicatie die aangeeft aan welke experiment de leerling deelneemt. Een experiment heeft een door OCW gedefinieerd begin/eind datum
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:WaardenlijstType-v02" />
+  </xsd:simpleType>
+  <xsd:simpleType name="ILTcode-v01">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Onderwijsaanbod
+Definitie: De elementcode Integrale Leerlingtelling.
+DefinitieHerkomst: OCW
+Toelichting: De ILT-code geldt voor opleidingen aan het Voortgezet onderwijs en Voortgezet Algemeen Volwassen Onderwijs. De code wordt door DUO onderhouden en bekendgemaakt.
+
+FormaatKarakterset: AN
+Geldigheidsregels:
+Opleidingcode is uniek per Opleidingstelsel [De Opleidingcode is uniek per Opleidingsstelsel.]
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="Opleidingcode">
+      <xsd:minLength value="4" />
+      <xsd:maxLength value="4" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Inschrijvingvolgnummer">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Onderwijsdeelname
+Definitie: Een door de instelling aan de inschrijving toegekend volgnummer ten behoeve van de registratie van een inschrijving bij DUO.
+DefinitieHerkomst: DUO
+BeschrijvingControles: In het HO geldt dat het inschrijvingvolgnummer per BRIN-nummer uniek moet zijn.
+In het MBO geldt dat het inschrijvingvolgnummer per instelling en persoon uniek moet zijn.
+Voor VO en VAVO geldt dezelfde systematiek als voor het MBO.
+
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:IdentificatiecodeType">
+      <xsd:minLength value="1" />
+      <xsd:maxLength value="20" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Leerjaar-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Onderwijsdeelname
+Definitie: Is een schooljaar als deel van een meerjarige leerplan.
+DefinitieHerkomst: OCW
+Toelichting: Verplicht bij PO en VO
+FormaatKarakterset: AN
+BeschrijvingControles: Het leerjaar bestaat uit 1 of 2 cijfers
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:TekstType">
+      <xsd:minLength value="1" />
+      <xsd:maxLength value="2" />
+      <xsd:pattern value="\d{1,2}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="OnderwijsaanbiederID-v01">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Identificatie
+Definitie: Een betekenisloze identifier voor een onderwijsaanbieder in de Registratie Instellingen en Opleidingen.
+DefinitieHerkomst: OCW
+FormaatKarakterset: AN
+BeschrijvingControles: Het onderwijsaanbiederID heeft de vorm van 3 cijfers, de hoofdletter A en drie cijfers.
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:TekstType">
+      <xsd:minLength value="7" />
+      <xsd:maxLength value="7" />
+      <xsd:pattern value="(\d{3}A\d{3})" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="OnderwijslocatieID-v01">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Identificatie
+Definitie: Een betekenisloze identifier voor een onderwijslocatie in de Registratie Instellingen en Opleidingen.
+DefinitieHerkomst: OCW
+FormaatKarakterset: AN
+BeschrijvingControles: Het onderwijslocatieID heeft de vorm van 3 cijfers, de hoofdletter X en drie cijfers.
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:TekstType">
+      <xsd:minLength value="7" />
+      <xsd:maxLength value="7" />
+      <xsd:pattern value="(\d{3}X\d{3})" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Onderwijsnummer">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Mens
+Definitie: Een uniek identificerend nummer dat aan een onderwijsontvanger wordt toegekend indien deze niet of niet verifieerbaar over een BSN (Burger Servicenummer) beschikt
+DefinitieHerkomst: OCW
+Toelichting: Het onderwijsnummer kan op de volgende wijze gecontroleerd worden:
+ MOD ((9*p1 + 8*p2 + 7*p3 + 6*p4 + 5*p5 + 4*p6 + 3*p7+ 2*p8)/11) = p9 + 5
+BeschrijvingControles: Het onderwijsnummer moet 9 cijfers bevatten en voldoen aan de 11 proef uit de toelichting.
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:TekstType">
+      <xsd:minLength value="9" />
+      <xsd:maxLength value="9" />
+      <xsd:pattern value="\d{9}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="OnderwijsvormVAVO-v01">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Onderwijsaanbod
+Definitie: Uitputtende waardelijst ten behoeve van het Voortgezet Algemeen Volwassenenonderwijs voor de manier waarop de kennisoverdracht is ingericht wat betreft fysieke aanwezigheid op de onderwijslocatie en de duur daarvan.
+DefinitieHerkomst: OCW
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:WaardenlijstType-v01" />
+  </xsd:simpleType>
+  <xsd:simpleType name="OntvangendeInstantie-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Meta
+Definitie: De instantie voor wie een bedrijfsdocument is bestemd.
+DefinitieHerkomst: DUO
+FormaatKarakterset: AN
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:IdentificatiecodeType">
+      <xsd:minLength value="1" />
+      <xsd:maxLength value="22" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="OntvangstBevestiging-v01">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Meta
+Definitie: Aanduiding dat een bericht ontvangen is.
+DefinitieHerkomst: DUO
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:CodeType">
+      <xsd:enumeration value="J">
+        <xsd:annotation>
+          <xsd:documentation>Bericht ontvangen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Opleidingcode">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Onderwijsaanbod
+Definitie: De code van de opleiding binnen het codestelsel
+DefinitieHerkomst: OCW
+FormaatKarakterset: AN
+Geldigheidsregels:
+ISAT range per niveau [Als het Opleidingsstelsel ISAT is moet de Opleidingcode per Opleidingniveau binnen de aangegeven range liggen:
+niveau	van	tot
+HBO-O	1000	6000
+WO-O	6000	9000
+HBO-O	9100	9300
+WO-O	9300	9400
+HBO-BA	30000	40000
+HBO-MA	40000	50000
+WO-BA	50000	60000
+WO-MA	60000	70000
+HBO-PM	70000	75000
+WO-PM	75000	80000
+HBO-AD	80000	80999
+HBO-BA	81000	81499]
+Opleidingcode is uniek per Opleidingstelsel [De Opleidingcode is uniek per Opleidingsstelsel.]
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:TekstType">
+      <xsd:minLength value="1" />
+      <xsd:maxLength value="8" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="PeriodeBegindatum-v01">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Algemeen
+Definitie: De datum die het begin van de periode aangeeft (inclusief).
+DefinitieHerkomst: DUO
+Toelichting: Let op: dit is een volledige datum
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:DatumType" />
+  </xsd:simpleType>
+  <xsd:simpleType name="PeriodeTotEnMetDatum-v01">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Algemeen
+Definitie: De datum die het einde van de periode aangeeft (inclusief).
+DefinitieHerkomst: DUO
+Toelichting: Let op: dit is een volledige datum
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:DatumType" />
+  </xsd:simpleType>
+  <xsd:simpleType name="VerblijfsoortAndereInstelling-v01">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Onderwijsdeelname
+Definitie: Indicatie die het soort verblijf van een leerling, die op een andere instelling zit, aangeeft
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:WaardenlijstType-v02" />
+  </xsd:simpleType>
+  <xsd:simpleType name="VerzendendeInstantie-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Meta
+Definitie: De instantie die een bedrijfsdocument heeft verzonden.
+DefinitieHerkomst: DUO
+FormaatKarakterset: AN
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:IdentificatiecodeType">
+      <xsd:minLength value="1" />
+      <xsd:maxLength value="22" />
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

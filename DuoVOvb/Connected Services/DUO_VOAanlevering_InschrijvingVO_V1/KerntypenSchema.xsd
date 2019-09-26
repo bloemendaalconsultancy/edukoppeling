@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://duo.nl/schema/NL:OCW:GWB:CORE" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://duo.nl/schema/NL:OCW:GWB:CORE" version="18565" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:annotation>
+    <xsd:documentation>XSD gegenereerd op 31-01-2018 15:58:51.916 op basis van commit-versie 18565 van het DUO_Service- en Berichtenboek ten behoeve van het servicecontract DUO_VOAanlevering_InschrijvingVAVO_V1. Gemaakt met H:\.magicdraw185\stateful16\data\reports\WSDL-XSD-script\XSD-WSDL-script_V0039.docx en XSD-script_V0039.xml</xsd:documentation>
+  </xsd:annotation>
+  <xsd:simpleType name="CodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+Definitie: Gelimiteerde set van vaste combinaties van letters en cijfers. Maakt gebruik van enumeraties.
+DefinitieHerkomst: DUO
+FormaatKarakterset: AN
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:normalizedString" />
+  </xsd:simpleType>
+  <xsd:simpleType name="DatumTijdLangType">
+    <xsd:annotation>
+      <xsd:documentation>
+Definitie: Tijdbepaling met datum en tijd in jaar, maand, dag, uur, minuten, seconden en milliseconden
+DefinitieHerkomst: DUO
+FormaatKarakterset: AN
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:dateTime" />
+  </xsd:simpleType>
+  <xsd:simpleType name="DatumType">
+    <xsd:annotation>
+      <xsd:documentation>
+Definitie: Tijdbepaling in jaar, maand en dag
+DefinitieHerkomst: DUO
+FormaatKarakterset: AN
+BeschrijvingControles: De datum moet bestaan.
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:date" />
+  </xsd:simpleType>
+  <xsd:simpleType name="IdentificatiecodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+Definitie: Identificerende combinatie van letters en cijfers zonder betekenis
+DefinitieHerkomst: DUO
+FormaatKarakterset: AN
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:normalizedString">
+      <xsd:minLength value="1" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="IndicatorType">
+    <xsd:annotation>
+      <xsd:documentation>
+Definitie: Het indicatortype is een Boolean, kan alleen waar of niet waar zijn
+DefinitieHerkomst: DUO
+FormaatKarakterset: AN
+BeschrijvingControles: De waarde moet true of false, 1 of 0 zijn
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:boolean" />
+  </xsd:simpleType>
+  <xsd:simpleType name="TekstType">
+    <xsd:annotation>
+      <xsd:documentation>
+Definitie: Kerntype voor willekeurige tekst
+DefinitieHerkomst: DUO
+FormaatKarakterset: AN
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="3000" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="WaardenlijstType-v01">
+    <xsd:annotation>
+      <xsd:documentation>
+Definitie: Gelimiteerde set van vaste combinaties van letters en cijfers. De toegestane waarden worden in een centrale tabel bij DUO bijgehouden.
+DefinitieHerkomst: DUO
+Toelichting: De toegestane waarden worden niet als enumeratie in de XSD opgenomen.
+
+Niet alle toegestane tekens zijn werkbaar. In de volgende versie wordt een aantal tekens niet meer toegestaan.
+FormaatKarakterset: AN
+BeschrijvingControles: Toegestane tekens zijn letters, cijfers, punten, plussen, minnen, underscores en spaties.
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:minLength value="1" />
+      <xsd:maxLength value="70" />
+      <xsd:pattern value="[A-Za-z0-9._\-/ ]*" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="WaardenlijstType-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Definitie: Gelimiteerde set van vaste combinaties van letters en cijfers. De toegestane waarden worden in een centrale tabel bij DUO bijgehouden.
+DefinitieHerkomst: DUO
+Toelichting: De toegestane waarden worden niet als enumeratie in de XSD opgenomen.
+FormaatKarakterset: AN
+BeschrijvingControles: Toegestane tekens zijn letters, cijfers en underscores.
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:minLength value="1" />
+      <xsd:maxLength value="70" />
+      <xsd:pattern value="[A-Z0-9_]*" />
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

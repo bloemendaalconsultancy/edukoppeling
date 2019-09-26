@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://duo.nl/schema/NL:OCW:GWB:BASIS" xmlns:qf3="http://duo.nl/schema/NL:OCW:GWB:CORE" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://duo.nl/schema/NL:OCW:GWB:BASIS" version="18565" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="KerntypenSchema.xsd" namespace="http://duo.nl/schema/NL:OCW:GWB:CORE" />
+  <xsd:annotation>
+    <xsd:documentation>XSD gegenereerd op 31-01-2018 16:16:36.156 op basis van commit-versie 18565 van het DUO_Service- en Berichtenboek ten behoeve van het servicecontract DUO_VOInformatiediensten_IdentificerenPersoonVAVO_V1. Gemaakt met H:\.magicdraw185\stateful16\data\reports\WSDL-XSD-script\XSD-WSDL-script_V0039.docx en XSD-script_V0039.xml</xsd:documentation>
+  </xsd:annotation>
+  <xsd:simpleType name="AanduidingLocatie">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Bereikbaarheid
+Definitie: De nadere aanduiding van de locatie waar iemand is ingeschreven of  het adres indien daarbij geen officiële straatnaam hoort.
+FormaatKarakterset: AN
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:TekstType">
+      <xsd:maxLength value="35" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AdresregelBuitenland1-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Bereikbaarheid
+Definitie: De eerste regel van het buitenlands adres
+FormaatKarakterset: T
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:NaamType">
+      <xsd:maxLength value="35" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AdresregelBuitenland2-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Bereikbaarheid
+Definitie: De tweede regel van het buitenlands adres
+FormaatKarakterset: T
+Geldigheidsregels:
+AdresregelBuitenland2 als AdresregelBuitenland1 gevuld is [AdresregelBuitenland2 mag alleen gevuld worden als AdresregelBuitenland1 gevuld is]
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:NaamType">
+      <xsd:maxLength value="35" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AdresregelBuitenland3-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Bereikbaarheid
+Definitie: De derde regel van het buitenlands adres
+FormaatKarakterset: T
+Geldigheidsregels:
+AdresregelBuitenland3 als AdresregelBuitenland2 gevuld is [AdresregelBuitenland3 mag alleen gevuld worden als AdresregelBuitenland2 gevuld is]
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:NaamType">
+      <xsd:maxLength value="35" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Burgerservicenummer-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Mens
+Definitie: Het burgerservicenummer (BSN) is het nummer dat de natuurlijke persoon uniek identificeert in overheidsadministraties.
+DefinitieHerkomst: LO3.7:01.01.20 LO4: 01.02.01
+Toelichting: MOD ((9*p1 + 8*p2 + 7*p3 + 6*p4 + 5*p5 + 4*p6 + 3*p7 + 2*p8 - p9) : 11) = 0
+BeschrijvingControles: Het burgerservicenummer moet 9 cijfers bevatten en voldoen aan de 11 proef uit de toelichting.
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:TekstType">
+      <xsd:minLength value="9" />
+      <xsd:maxLength value="9" />
+      <xsd:pattern value="\d{9}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="DatumTijdBedrijfsdocument">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Meta
+Definitie: Datum en  tijdstip waarop een bedrijfsdocument is aangemaakt, weergegeven in UTC (is een standaardtijd, gebaseerd op een atoomklok en gecoördineerd met de rotatie van de aarde)
+DefinitieHerkomst: DUO
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:DatumTijdLangType" />
+  </xsd:simpleType>
+  <xsd:simpleType name="Geboortedatum">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Mens
+Definitie: De datum waarop de natuurlijke persoon is geboren
+DefinitieHerkomst: LO3: 01.03.10 LO4: 01.10.06 
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:DatumOnvolledigType" />
+  </xsd:simpleType>
+  <xsd:simpleType name="Geslacht-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Mens
+Definitie: Een aanduiding die aangeeft dat de ingeschrevene een man of een vrouw is, of dat het geslacht (nog) onbekend is.
+DefinitieHerkomst: Logisch ontwerp GBA
+Toelichting: De waarden wijken af van dat wat in het GBA wordt genoemd.
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:CodeType">
+      <xsd:enumeration value="1">
+        <xsd:annotation>
+          <xsd:documentation>Man</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="2">
+        <xsd:annotation>
+          <xsd:documentation>Vrouw</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="3">
+        <xsd:annotation>
+          <xsd:documentation>Vastgesteld onbekend</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Geslachtsnaam-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Mens
+Definitie: De naamgegevens van de persoon met uitzondering van de voornamen.
+DefinitieHerkomst: LO4: 01.04.01
+Toelichting: Indien de natuurlijke persoon vastgesteld geen geslachtsnaam heeft wordt de waarde - (liggend streepje) opgenomen.
+Er is een overgangsperiode waarbij LO4 nog niet geldt en het voorvoegsel apart wordt bijgehouden.
+FormaatKarakterset: T
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:NaamType">
+      <xsd:maxLength value="200" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Huisletter">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Bereikbaarheid
+Definitie: De alfabetische aanduiding zoals deze door het gemeentebestuur aan de locatie is toegekend ter aanvulling op het huisnummer
+Toelichting: alleen de letters van het alfabet
+BeschrijvingControles: De huisletter mag 1 letter uit het alfabet bevatten.
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:TekstType">
+      <xsd:minLength value="1" />
+      <xsd:maxLength value="1" />
+      <xsd:pattern value="([A-Za-z])?" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Huisnummer-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Bereikbaarheid
+Definitie: De numerieke aanduiding zoals deze door het gemeentebestuur aan het object is toegekend
+FormaatKarakterset: AN
+BeschrijvingControles: mag uit maximaal 5 cijfers bestaan
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:TekstType">
+      <xsd:pattern value="\d{0,5}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="HuisnummerAanduiding-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Bereikbaarheid
+Definitie: De aanduiding dat het opgenomen adres niet het feitelijke woonadres van de persoon is, maar dat het adres zich in de nabijheid van zijn feitelijke verblijfplaats bevindt.
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:CodeType">
+      <xsd:enumeration value="by">
+        <xsd:annotation>
+          <xsd:documentation>Bij locatie</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="to">
+        <xsd:annotation>
+          <xsd:documentation>Tegenover locatie</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="HuisnummerToevoeging-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Bereikbaarheid
+Definitie: Die letters of tekens die noodzakelijk zijn om, naast het juiste huisnummer, de brievenbus te vinden
+Toelichting: Vervallen ivm nieuwe layout BAG
+FormaatKarakterset: T
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:TekstType">
+      <xsd:maxLength value="5" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Landcode">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Bereikbaarheid
+Definitie: De code van een land in de tabel 34 van de Rijkdienst voor Identiteitsgegevens.
+DefinitieHerkomst: GBA
+Toelichting: Tabel 34 betreft de  Landentabel en is een van de landelijke tabellen GBA.
+BeschrijvingControles: De landcode bestaat uit 4 cijfers
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:TekstType">
+      <xsd:minLength value="4" />
+      <xsd:maxLength value="4" />
+      <xsd:pattern value="\d{4,4}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Onderwijsnummer">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Mens
+Definitie: Een uniek identificerend nummer dat aan een onderwijsontvanger wordt toegekend indien deze niet of niet verifieerbaar over een BSN (Burger Servicenummer) beschikt
+DefinitieHerkomst: OCW
+Toelichting: Het onderwijsnummer kan op de volgende wijze gecontroleerd worden:
+ MOD ((9*p1 + 8*p2 + 7*p3 + 6*p4 + 5*p5 + 4*p6 + 3*p7+ 2*p8)/11) = p9 + 5
+BeschrijvingControles: Het onderwijsnummer moet 9 cijfers bevatten en voldoen aan de 11 proef uit de toelichting.
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:TekstType">
+      <xsd:minLength value="9" />
+      <xsd:maxLength value="9" />
+      <xsd:pattern value="\d{9}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="OntvangendeInstantie-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Meta
+Definitie: De instantie voor wie een bedrijfsdocument is bestemd.
+DefinitieHerkomst: DUO
+FormaatKarakterset: AN
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:IdentificatiecodeType">
+      <xsd:minLength value="1" />
+      <xsd:maxLength value="22" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="OntvangstBevestiging-v01">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Meta
+Definitie: Aanduiding dat een bericht ontvangen is.
+DefinitieHerkomst: DUO
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:CodeType">
+      <xsd:enumeration value="J">
+        <xsd:annotation>
+          <xsd:documentation>Bericht ontvangen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Plaatsnaam-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Bereikbaarheid
+Definitie: De naam van de plaats 
+DefinitieHerkomst: GBA
+Toelichting: Schrijfwijze: in hoofdletters
+FormaatKarakterset: AN
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:NaamType">
+      <xsd:minLength value="1" />
+      <xsd:maxLength value="40" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Postcode-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Bereikbaarheid
+Definitie: De door de Post NL vastgestelde code behorend bij de straatnaam en het huisnummer dan wel de door Post NL vastgestelde code behorende bij een bepaalde combinatie van een naam openbare ruimte en een huisnummer.
+Toelichting: Bij publicatie tonen als NNNN AA (met een spatie tussen de 4 cijfers en 2 letters)
+FormaatKarakterset: AN
+BeschrijvingControles: De postcode bestaat uit 4 cijfers en 2 hoofdletters.
+Een postcode wordt in het adres opgenomen om het automatisch sorteren van de post (met optische tekenherkenning, OCR) gemakkelijker te maken.
+
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:TekstType">
+      <xsd:maxLength value="6" />
+      <xsd:pattern value="([1-9]{1}[0-9]{3}[A-Z]{2})" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Straatnaam-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Bereikbaarheid
+Definitie: De straatnaam zoals die officieel is vastgesteld door de gemeente
+FormaatKarakterset: T
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:NaamType">
+      <xsd:maxLength value="80" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="VerzendendeInstantie-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Meta
+Definitie: De instantie die een bedrijfsdocument heeft verzonden.
+DefinitieHerkomst: DUO
+FormaatKarakterset: AN
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:IdentificatiecodeType">
+      <xsd:minLength value="1" />
+      <xsd:maxLength value="22" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Voornamen-v03">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Mens
+Definitie: De verzameling namen die, gescheiden door spaties, aan de geslachtsnaam voorafgaat. 
+DefinitieHerkomst: LO3: 01.02.10 LO4: 01.03.01 
+Toelichting: Indien de natuurlijke persoon vastgesteld geen voornamen heeft, wordt de waarde - (liggend streepje) opgenomen. Zolang LO3 nog gebruikt wordt kunnen voornamen ook leeg zijn.
+FormaatKarakterset: T
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:Naam0Type">
+      <xsd:maxLength value="200" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Voorvoegsels-v02">
+    <xsd:annotation>
+      <xsd:documentation>
+Domein: Mens
+Definitie: Het deel van de geslachtsnaam dat voorkomt in de voorvoegseltabel en door een spatie van de geslachtsnaam is gescheiden
+DefinitieHerkomst: LO3: 01.02.30
+Toelichting: Voorvoegsels worden opgenomen in de geslachtsnaam vanaf LO4
+FormaatKarakterset: T
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:NaamType">
+      <xsd:maxLength value="10" />
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

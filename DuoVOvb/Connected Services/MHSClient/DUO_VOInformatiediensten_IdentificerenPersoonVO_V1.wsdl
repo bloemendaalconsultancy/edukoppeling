@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://duo.nl/contract/DUO_VOInformatiediensten_IdentificerenPersoonVO_V1" xmlns:qf5="http://duo.nl/schema/DUO_VOInformatiediensten_IdentificerenPersoonVO_V1" name="DUO_VOInformatiediensten_IdentificerenPersoonVO_V1" targetNamespace="http://duo.nl/contract/DUO_VOInformatiediensten_IdentificerenPersoonVO_V1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>Versie 1.0</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import schemaLocation="DUO_VOInformatiediensten_IdentificerenPersoonVO_V1.xsd" namespace="http://duo.nl/schema/DUO_VOInformatiediensten_IdentificerenPersoonVO_V1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="aanleverenIdentificerenPersoonVO_Request">
+    <wsdl:part name="body" element="qf5:aanleverenIdentificerenPersoonVO_Request" />
+  </wsdl:message>
+  <wsdl:message name="aanleverenIdentificerenPersoonVO_Response">
+    <wsdl:part name="body" element="qf5:aanleverenIdentificerenPersoonVO_Response" />
+  </wsdl:message>
+  <wsdl:portType name="DUO_VOInformatiediensten_IdentificerenPersoonVO_V1.0_PortType">
+    <wsdl:operation name="aanleverenIdentificerenPersoonVO">
+      <wsdl:input message="tns:aanleverenIdentificerenPersoonVO_Request" />
+      <wsdl:output message="tns:aanleverenIdentificerenPersoonVO_Response" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DUO_VOInformatiediensten_IdentificerenPersoonVO_V1.0_Binding" type="tns:DUO_VOInformatiediensten_IdentificerenPersoonVO_V1.0_PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="aanleverenIdentificerenPersoonVO">
+      <soap:operation soapAction="http://duo.nl/contract/DUO_VOInformatiediensten_IdentificerenPersoonVO_V1/aanleverenIdentificerenPersoonVO" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DUO_VOInformatiediensten_IdentificerenPersoonVO_V1.0">
+    <wsdl:port name="DUO_VOInformatiediensten_IdentificerenPersoonVO_V1.0Port" binding="tns:DUO_VOInformatiediensten_IdentificerenPersoonVO_V1.0_Binding">
+      <soap:address location="localhost" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

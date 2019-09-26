@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://duo.nl/schema/DUO_VOBasisschema_Inschrijving_V1" xmlns:qf3="http://duo.nl/schema/NL:OCW:GWB:CORE" xmlns:qf4="http://duo.nl/schema/NL:OCW:GWB:BASIS" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://duo.nl/schema/DUO_VOBasisschema_Inschrijving_V1" version="18565" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="KerntypenSchema.xsd" namespace="http://duo.nl/schema/NL:OCW:GWB:CORE" />
+  <xsd:import schemaLocation="BasisSchema.xsd" namespace="http://duo.nl/schema/NL:OCW:GWB:BASIS" />
+  <xsd:annotation>
+    <xsd:documentation>XSD gegenereerd op 31-01-2018 15:58:51.853 op basis van commit-versie 18565 van het DUO_Service- en Berichtenboek ten behoeve van het servicecontract DUO_VOAanlevering_InschrijvingVAVO_V1. Gemaakt met H:\.magicdraw185\stateful16\data\reports\WSDL-XSD-script\XSD-WSDL-script_V0039.docx en XSD-script_V0039.xml</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="AanvullendeOpleiding">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="opleidingcode" type="qf4:ILTcode-v01" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Bedrijfsdocument">
+    <xsd:annotation>
+      <xsd:documentation>
+Definitie: Een pakket gestructureerde gegevens
+DefinitieHerkomst: DUO
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="identificatiecodeBedrijfsdocument" type="IdentificatieBedrijfsdocument" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="verzendendeInstantie" type="qf4:VerzendendeInstantie-v02" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="ontvangendeInstantie" type="qf4:OntvangendeInstantie-v02" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="datumTijdBedrijfsdocument" type="qf4:DatumTijdBedrijfsdocument" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Inschrijving">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="Bedrijfsdocument">
+        <xsd:sequence>
+          <xsd:choice minOccurs="1" maxOccurs="1">
+            <xsd:element name="burgerservicenummer" type="qf4:Burgerservicenummer-v02" />
+            <xsd:element name="onderwijsnummer" type="qf4:Onderwijsnummer" />
+          </xsd:choice>
+          <xsd:element minOccurs="1" maxOccurs="1" name="brin" type="qf4:BRIN" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="inschrijvingvolgnummer" type="qf4:Inschrijvingvolgnummer" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="datumInschrijving" type="qf4:DatumInschrijving" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="datumUitschrijving" type="qf4:DatumUitschrijving" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InschrijvingPeriode">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="datumBegin" type="qf4:PeriodeBegindatum-v01" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="onderwijsaanbieder" type="qf4:OnderwijsaanbiederID-v01" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="onderwijslocatie" type="qf4:OnderwijslocatieID-v01" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="opleidingcode" type="qf4:ILTcode-v01" />
+      <xsd:element minOccurs="0" maxOccurs="100" name="aanvullendeOpleiding" type="AanvullendeOpleiding" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="OntvangstBevestiging">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="Bedrijfsdocument">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="ontvangstBevestiging" type="qf4:OntvangstBevestiging-v01" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VerwijderingInschrijving">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="Bedrijfsdocument">
+        <xsd:sequence>
+          <xsd:choice minOccurs="1" maxOccurs="1">
+            <xsd:element name="burgerservicenummer" type="qf4:Burgerservicenummer-v02" />
+            <xsd:element name="onderwijsnummer" type="qf4:Onderwijsnummer" />
+          </xsd:choice>
+          <xsd:element minOccurs="1" maxOccurs="1" name="brin" type="qf4:BRIN" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="inschrijvingvolgnummer" type="qf4:Inschrijvingvolgnummer" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="IdentificatieBedrijfsdocument">
+    <xsd:annotation>
+      <xsd:documentation>
+FormaatKarakterset: AN
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="qf3:TekstType">
+      <xsd:minLength value="36" />
+      <xsd:maxLength value="36" />
+      <xsd:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ce8888d6-9f8e-42dd-9884-bb6deae2b804" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="D:\Bestanden\project SVPO\PvE VO\VO XSD\VOA Inschrijvingen\DUO_VOAanlevering_InschrijvingVO_V1.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DUO_VOAanlevering_InschrijvingVO_V1.wsdl" MetadataType="Wsdl" ID="2d37859f-0055-49d5-af2c-209f312d2442" SourceId="1" SourceUrl="file:///D:/Bestanden/project SVPO/PvE VO/VO XSD/VOA Inschrijvingen/DUO_VOAanlevering_InschrijvingVO_V1.wsdl" />
+    <MetadataFile FileName="DUO_VOBasisschema_Inschrijving_V1.xsd" MetadataType="Schema" ID="0a50c9dd-633e-4066-bd6f-3e64f1421847" SourceId="1" SourceUrl="file:///D:/Bestanden/project SVPO/PvE VO/VO XSD/VOA Inschrijvingen/DUO_VOBasisschema_Inschrijving_V1.xsd" />
+    <MetadataFile FileName="BasisSchema.xsd" MetadataType="Schema" ID="6b615717-f2e1-4e84-ac43-108a3178f763" SourceId="1" SourceUrl="file:///D:/Bestanden/project SVPO/PvE VO/VO XSD/VOA Inschrijvingen/BasisSchema.xsd" />
+    <MetadataFile FileName="DUO_VOAanlevering_InschrijvingVO_V1.xsd" MetadataType="Schema" ID="fb0e43e1-1eb1-445d-875a-952740ca4732" SourceId="1" SourceUrl="file:///D:/Bestanden/project SVPO/PvE VO/VO XSD/VOA Inschrijvingen/DUO_VOAanlevering_InschrijvingVO_V1.xsd" />
+    <MetadataFile FileName="KerntypenSchema.xsd" MetadataType="Schema" ID="3546339a-7e12-4bbc-a0b6-10422bc40823" SourceId="1" SourceUrl="file:///D:/Bestanden/project SVPO/PvE VO/VO XSD/VOA Inschrijvingen/KerntypenSchema.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
